@@ -64,3 +64,7 @@ h1 {
     width: 200px;
     border-radius: 100px;
 }
+.photographer_link{
+    text-decoration: none;
+    text-align: center;
+}

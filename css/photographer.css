@@ -1,11 +1,102 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
 #contact_modal {
     display: none;
+    position: absolute;
+    top: 94px;
+    left: 0%;
+    width: -webkit-fill-available;
 }
 
+aside{
+    background-color: #D3573C;
+    height: 60px;
+    position: sticky;
+    width: 24%;
+    bottom: 0px;
+    left: 73%;
+    border-radius: 5px 5px 0px 0px;
+}
+aside p {
+    font-size: larger;
+}
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    height: 50px;
+    margin-left: 100px;
+}
+.titlePhotographe{
+    color: #D3573C;
+}
+.photographer_photo{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+}
+.photograph_tagline{
+    color: #525252;
+}
+.tri{
+    font-weight: bold;
+    margin-left: 100px;
+}
+
+.selectTri{
+    font-size: large;
+    background-color: #901C1C;
+    color: white;
+    width: 165px;
+    /* height: 70px; */
+    height: auto;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding-left: 5px;
+}
+.photographer_filtrer{
+    display: flex;
+    flex-direction: row;
+}
+.btnTri{
+    border: 0;
+    background-color: #901C1C;
+    color: white;
+    font-size: inherit;
+    margin-top: 16px;
+    padding-left: 0px;
+}
+.chevronTri{
+    margin-left: 40px;
+}
+.allOption{
+    display: block;
+    height: 95px;
+}
+hr{
+    width: 90%;
+    border: 1px solid transparent;
+    background-color: white;
+    height: 0px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.option{
+    display: none;
 }
 
 .contact_button {
@@ -20,7 +111,52 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.envoyer{
+    margin-top: 25px;
+}
+#textArea{
+    width: 100%;
+}
+.photographer_media{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 100px;
+    margin-top: 5%;
+}
 
+.photographerMedia_image{
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+}
+.blocMediaImg--info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #901C1C;
+    font-size: larger;
+}
+
+
+
+.blocMediaVideo--info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #901C1C;
+    font-size: larger;
+}
+
+
+video{
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+}
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
