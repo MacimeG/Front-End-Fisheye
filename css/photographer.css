@@ -28,6 +28,8 @@ aside{
 }
 aside p {
     font-size: larger;
+    margin: 0;
+    line-height: 3;
 }
 .photograph-header {
     background-color: #FAFAFA;
@@ -125,11 +127,70 @@ hr{
     margin: 0 100px;
     margin-top: 5%;
 }
+.lightBox{
+    display: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #4c4b4bb0;
+    z-index: 10;
+    /* overflow: scroll; */
+}
+/* .lightBoxOuverte{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #4c4b4bb0;
+    z-index: 10;
+    overflow: scroll;
+} */
+.lightBox_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.lightbox_next,
+.lightbox_prev{
+    color: #901C1C;
+    position: fixed;
+    top: 50%;
+    z-index: 11;
+    cursor: pointer;
+}
+.lightbox_prev{
+    right: auto;
+    left: 20px;
+}
+.lightbox_next{
+    left: auto;
+    right: 20px;
+}
+
+.lightbox_close{
+    color: #901C1C;
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    cursor: pointer;
+}
+.lightBox_img{
+    /* width: 55%; */
+    width: 44%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .photographerMedia_image{
     width: 350px;
     height: 300px;
     object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
 }
 .blocMediaImg--info{
     display: flex;

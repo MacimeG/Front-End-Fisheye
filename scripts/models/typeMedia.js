@@ -1,3 +1,4 @@
+// import {lightbox} from '../utils/lightbox.js';
 export class TypeFile{
     constructor(data, photoName){
         this._id = data.id;
@@ -24,12 +25,20 @@ export class TypeFile{
 
         // ici je met en place les attributs 
         article.setAttribute('class','blocMediaImg')
+        img.setAttribute('id', `${this._id}`)
         img.setAttribute('class', 'photographerMedia_image')
         img.setAttribute('src', `assets/photographers/${this._photoName}/${this._image}`)
         div.setAttribute('class', 'blocMediaImg--info')
         title.setAttribute('class', 'blocMediaImg--title')
         like.setAttribute('class', 'blocMediaImg--likes')
         heartIcon.setAttribute('class', 'fa-regular fa-heart')
+
+        // ici je met en place un ecouteur d'évenement qui au clique va me recuperer le bon id de la photo
+
+        // img.addEventListener('click', function (){
+        //     console.log(img.id);
+        //     console.log(img.findIndex(elt => elt.id == elt.img))
+        // })
 
 
         // ici je met le titre et le nombre de like correspondant a la photo
@@ -58,7 +67,7 @@ export class TypeFile{
         let heartIcon = document.createElement('i')
 
         article.setAttribute('class', 'blocMediaVideo')
-        video.setAttribute('controls', true)
+        // video.setAttribute('controls', "")
         video.setAttribute('class', 'photographerMedia_video')
         source.setAttribute('src', `assets/photographers/${this._photoName}/${this._video}`)
         div.setAttribute('class', 'blocMediaVideo--info')
