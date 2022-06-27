@@ -178,7 +178,7 @@ hr{
     right: 20px;
     cursor: pointer;
 }
-.lightBox_img{
+.lightBox_media{
     /* width: 55%; */
     width: 44%;
     height: 100%;
@@ -217,6 +217,7 @@ video{
     width: 350px;
     height: 300px;
     object-fit: cover;
+    cursor: pointer;
 }
 .modal {
     border-radius: 5px;

@@ -30,15 +30,10 @@ export class TypeFile{
         img.setAttribute('src', `assets/photographers/${this._photoName}/${this._image}`)
         div.setAttribute('class', 'blocMediaImg--info')
         title.setAttribute('class', 'blocMediaImg--title')
-        like.setAttribute('class', 'blocMediaImg--likes')
+        like.setAttribute('class', 'blocMedia--likes')
         heartIcon.setAttribute('class', 'fa-regular fa-heart')
 
         // ici je met en place un ecouteur d'évenement qui au clique va me recuperer le bon id de la photo
-
-        // img.addEventListener('click', function (){
-        //     console.log(img.id);
-        //     console.log(img.findIndex(elt => elt.id == elt.img))
-        // })
 
 
         // ici je met le titre et le nombre de like correspondant a la photo
@@ -72,7 +67,7 @@ export class TypeFile{
         source.setAttribute('src', `assets/photographers/${this._photoName}/${this._video}`)
         div.setAttribute('class', 'blocMediaVideo--info')
         title.setAttribute('class', 'blocMediaVideo--title')
-        like.setAttribute('class', 'blocMediaVideo--likes')
+        like.setAttribute('class', 'blocMedia--likes')
         heartIcon.setAttribute('class', 'fa-regular fa-heart')
 
         title.textContent = this._title;
@@ -93,10 +88,17 @@ export class TypeFile{
     }
 
     createTarifCard(){
-
+        // const allLike = document.querySelectorAll('.blocMedia--likes')
+        // allLike.forEach(element =>{
+        //     // parseInt(element.textContent)
+        //     let likes = 0 
+        //     likes = likes + parseFloat(element.textContent)
+        //     console.log(likes);
+        // });
+        // console.log(allLike);
         let aside = document.createElement('aside')
         let pAside = document.createElement('p')
-
+        
         pAside.textContent = this._price+'€ / jour';
 
         aside.appendChild(pAside)
