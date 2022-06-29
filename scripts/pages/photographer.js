@@ -68,13 +68,13 @@ async function displayPhotographerMain(photographe){
         const media = imageMedia[i];
         // ici je crée une variable contenant le nom des photographes, que je viens spliter pour recuperer que son prenom, qui correspond au nom des dossiers contenant les images.
         let name = photographer.name.split(' ')
-        
         let card = new TypeFile(media, name[0])
         let imageCard = card.createImageCard();
-
-
+        // ici je recupere le premiere enfant de imageCard, qui est l'img, comme sa la lightbox s'affiche uniquement au clique sur l'image, et non sur le like.
+        let childImageCard = imageCard.children
+        
         // ici je met en place un ecouteur d'évenement qui au clique va me recuperer le bon id de la photo ainsi que son index et je vais pouvoir mettre en place la lightBox
-        imageCard.addEventListener('click', function (){
+        childImageCard[0].addEventListener('click', function (){
           let index = arrayMedia.findIndex( (elt) => elt.id == media.id)
           
           console.log(index);
@@ -126,7 +126,6 @@ async function displayPhotographerMain(photographe){
             console.log('tu cliques bien sur la precedente fleche');
           }))
         })
-
         document.querySelector('.photographer_media').append(imageCard);
       }
      
@@ -140,9 +139,10 @@ async function displayPhotographerMain(photographe){
         let name = photographer.name.split(' ')
         let card = new TypeFile(mediaV, name[0])
         let videoCard = card.createVideoCard();
-        
+            // ici je recupere le premiere enfant de imageCard, qui est l'img, comme sa la lightbox s'affiche uniquement au clique sur la video, et non sur le like.
+        let childVideoCard = videoCard.children
 
-        videoCard.addEventListener('click', function(){
+        childVideoCard[0].addEventListener('click', function(){
           let index = arrayMedia.findIndex( (elt) => elt.id == mediaV.id)
           console.log(index);
           document.querySelector('.lightBox').innerHTML= `    
@@ -165,12 +165,28 @@ async function displayPhotographerMain(photographe){
 
         document.querySelector('.photographer_media').append(videoCard);
       }
-      
+
       // ici j'instanci un nouvel objet qui vas s'occuper d'appeler la method qui affiche le tarif journalié pour l'instant.
       let cardTarif = new TypeFile(priceMedia[0], photographer.name)
       let getCardTarif = cardTarif.createTarifCard();
       document.querySelector('#main').append(getCardTarif);
-   
+      
+
+      // ici je vais essayé d'additionné tous les likes, je me sers donc de la method .map qui construit un nouveau tableau, la fonction reduce prend toutes les valeurs et renvoi une seule valeur, qui est la somme de toute.
+      const sumAllLike = arrayMedia.map(elt => elt.likes).reduce((prev,curr) => prev + curr,0)
+      // ici je rajoute donc le nombre total de like, dans l'asideCard. et j'y rajoute aussi sont icon (le coeur)
+      
+      let asideContent = document.querySelector('.asideCard_likes')
+      let asideLikeHeart = document.querySelector('.asideCard_content')
+      asideContent.textContent = sumAllLike;
+      
+      let iconLike = document.createElement('i')
+      iconLike.setAttribute('class','fa-solid fa-heart')
+
+
+      // asideIcon.appendChild(iconLike)
+      asideLikeHeart.appendChild(iconLike)
+      
 
     return {name, portrait, city, country, id, tagline, price}
 }
