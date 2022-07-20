@@ -11,36 +11,58 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" alt="logo du site" />
+      <img src="assets/images/logo.png" class="logo" />
     </header>
     <main id="main">
-    
+      <section class="photograph-header"></section>
+     <section class="photograph_filtre">
+      <p class="tri">Trier par </p>
+       <select id="list_tri">
+           <option value="popularite">Popularité</option>
+           <option value="date">Date</option>
+           <option value="titre">Titre</option>
+       </select>
+      </section>
+      <section class="photograph_media"></section>
+      <div id="lightBox">
+        <i class="lightbox_prev fa-solid fa-chevron-left fa-2xl"></i>
+       <i class="lightbox_next fa-solid fa-chevron-right fa-2xl"></i>
+       <i class="lightbox_close fa-solid fa-xmark fa-2xl" onclick="closeLightbox()"></i>
+       <div class="lightBox_container">
+        <img class="lightBox_media"></img>
+        <video class="lightBox_video"></video>
+        <span id="mediaName" class="mediaName"></span>
+       </div>
+      </div>
     </main>
     <div id="contact_modal">
-      <div class="modal">
-        <header>
+			<div class="modal">
+				<header>
           <h2>Contactez-moi</h2>
-          <img class="closeModal" src="assets/icons/close.svg" />
+          <span class="namePhotographe"></span>
+          <img class="btnCloseModal" src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-        <form>
+				<form action="photographer.html"
+        name="formContact"
+        id="formContact">
           
             <label for="prenom">Prénom</label>
-            <input type="text" name="prenom" />
+            <input id="prenomForm" type="text" name="prenom" />
             <label for="nom">Nom</label>
-            <input type="text" name="nom" >
+            <input id="nomForm" type="text" name="nom" >
             <label for="mail">mail</label>
-            <input type="mail" name="mail" >
+            <input id="mailForm" type="mail" name="mail" >
             <label for="area">Votre message</label>
             <textarea name="textarea" id="textArea" cols="100" rows="10"></textarea>
           
           <button class="contact_button envoyer">Envoyer</button>
         </form>
-      </div>
-    </div>
-
-
-    <script type="module" src="scripts/pages/photographer.js"></script>
-    <!-- <script type="module" src="scripts/models/typeMedia.js"></script> -->
-   
+			</div>
+		</div>
+    <script src="/scripts/services/api.js"></script>
+    <script src="/scripts/factories/photographerFactorie.js"></script>
+    <script src="/scripts/factories/lightbox.js"></script>
+    <script  src="/scripts/pages/photographer.js"></script>
+    <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

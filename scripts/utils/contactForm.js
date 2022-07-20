@@ -1,17 +1,15 @@
-export function displayModal() {
+function displayModal() {
+    const modal = document.getElementById("contact_modal");
     const button = document.querySelector('.contact_button')
-    button.addEventListener('click', function(){
-        const modal = document.getElementById("contact_modal");
-        modal.style.display = "block";
+    button.addEventListener('click', ()=>{
         console.log('tu cliques');
+        modal.style.display = "block";
+
     })
 }
 
-export function closeModal() {
-    document.querySelector('.closeModal').addEventListener('click',function(){
+function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
-    })
 }
-
 

@@ -22,11 +22,13 @@ aside{
     justify-content: space-around;
     background-color: #D3573C;
     height: 60px;
-    position: sticky;
+    /* position: sticky; */
     width: 24%;
     bottom: 0px;
     left: 73%;
     border-radius: 5px 5px 0px 0px;
+    /* top: 732px; */
+    position: fixed;
 }
 .asideCard_content{
     display: flex;
@@ -36,8 +38,9 @@ aside p {
     font-size: larger;
     margin: 0;
     line-height: 3;
+    padding-right: 5px;
 }
-.photograph-header {
+.photograph-headerContent {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
@@ -56,6 +59,7 @@ aside p {
     height: 200px;
     width: 200px;
     border-radius: 100px;
+    object-fit: cover;
 }
 .photograph_tagline{
     color: #525252;
@@ -64,29 +68,55 @@ aside p {
     font-weight: bold;
     margin-left: 100px;
 }
+.photograph_filtre{
+    display: flex;
+    flex-direction: row;
+}
+#list_tri{
+    margin-left: 15px;
+    border-radius: 5px;
+    background-color: #901C1C;
+    color: #FFFF;
+    width: 150px;
+    font-size: larger;
+    height: 55px;
+}
 
-.selectTri{
+/* .selectTri{
     font-size: large;
     background-color: #901C1C;
     color: white;
     width: 165px;
-    /* height: 70px; */
+    height: 45px;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding-left: 5px;
+    margin-top: 3px;
+}
+.selectTriOpen{
+    font-size: large;
+    background-color: #901C1C;
+    color: white;
+    width: 165px;
     height: auto;
     border-radius: 5px;
     margin-left: 15px;
     padding-left: 5px;
+    position: absolute;
+    left: 10.6%;
+    
 }
-.photographer_filtrer{
-    display: flex;
-    flex-direction: row;
-}
-.btnTri{
+.chevronTriOpen{
+    transform: rotate(180deg);
+} */
+/* .btnTri{
     border: 0;
     background-color: #901C1C;
     color: white;
     font-size: inherit;
-    margin-top: 16px;
+    margin-top: 11px;
     padding-left: 0px;
+    cursor: pointer;
 }
 .chevronTri{
     margin-left: 40px;
@@ -94,6 +124,7 @@ aside p {
 .allOption{
     display: block;
     height: 95px;
+    margin-top: 13px;
 }
 hr{
     width: 90%;
@@ -105,7 +136,7 @@ hr{
 }
 .option{
     display: none;
-}
+} */
 
 .contact_button {
     font-size: 20px;
@@ -129,7 +160,7 @@ hr{
     cursor: pointer;
 }
 
-.photographer_media{
+.photograph_media{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -137,14 +168,15 @@ hr{
     margin: 0 100px;
     margin-top: 5%;
 }
-.lightBox{
+#lightBox{
     display: none;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #4c4b4bb0;
+    /* background-color: #4c4b4bb0; */
+    background-color: #ffffffd6;
     z-index: 10;
     /* overflow: scroll; */
 }
@@ -160,9 +192,15 @@ hr{
 } */
 .lightBox_container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+.mediaName{
+    color: #901C1C;
+    width: auto;
 }
 .lightbox_next,
 .lightbox_prev{
@@ -190,19 +228,19 @@ hr{
 }
 .lightBox_media{
     /* width: 55%; */
-    width: 44%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%;
+    height: 90%;
+    object-fit: scale-down;
 }
 
-.photographerMedia_image{
+.photographerMedia{
     width: 350px;
     height: 300px;
     object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
 }
-.blocMediaImg--info{
+.blocMediaInfo{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -229,9 +267,9 @@ hr{
 
 
 video{
-    width: 350px;
-    height: 300px;
-    object-fit: cover;
+    width: 85%;
+    /* height: 90%; */
+    /* object-fit: cover; */
     cursor: pointer;
 }
 .modal {
@@ -245,23 +283,34 @@ video{
     padding: 35px;
     margin: auto;
     position: absolute;
-    top: -60px;
+    top: -88px;
     left: 20%;
 }
 
 .modal header {
     justify-content: space-between;
     width: 100%;
+    flex-direction: inherit;
+    margin-bottom: 35px;
+    align-items: baseline;
+    margin-top: -35px;
 }
 
 .modal header img {
     cursor: pointer;
+    position: absolute;
+    right: 37px;
+    top: 22px;
 }
 
 .modal header h2 {
     font-size: 64px;
     font-weight: normal;
     text-align: center;
+    margin: 0;
+}
+.modal header h3{
+    margin: 0;
 }
 
 form {
@@ -269,6 +318,7 @@ form {
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
+    /* margin-top: 40px; */
 }
 
 form label {
