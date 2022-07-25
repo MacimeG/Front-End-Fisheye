@@ -53,16 +53,19 @@ function infoPhotographe(data){
         photograph_header.appendChild(photograph_header_picture)
         photograph_header.appendChild(aside)
 
+        // ici je recupere ma span mise dans l'html et j'y ajoute le nom du photographe, dans la modal.
+        let nameModal = document.querySelector('.namePhotographe');
+        nameModal.textContent = name;
+
     return (photograph_header)
     }
     return {name, picture, city, country, id, tagline, price, getPhotographerHeader}
      
 }
-function infoMedia(data, name){
+function infoMedia(data, name, medias){
     const {id, photographerId, title, image, video, likes, date, price} = data;
     const picture = `assets/photographers/${name}/${image}`;
     const movie = `assets/photographers/${name}/${video}`;
-
     function getPhotographerMain(){
         // je crée une div qui va m'accueillir mes articles, qui eux contienne photo ou vidéos.
         // const photograph_media = document.createElement('div')
@@ -72,7 +75,7 @@ function infoMedia(data, name){
         const photograph_blocLike = document.createElement('div')
         const photograph_nbLike = document.createElement('p')
         const photograph_heartIcon = document.createElement('i')
-
+        // console.log(medias);
         // ici je vais mettre les attribut au constante crée au dessus
         photograph_article.className='blocMedia'
 
@@ -83,26 +86,31 @@ function infoMedia(data, name){
         photograph_heartIcon.className="fa-regular fa-heart heartIcon"
         photograph_title.textContent=title;
         photograph_nbLike.textContent= likes;
+        
        
         if (image) {
             const photograph_img = document.createElement('img')
             photograph_img.setAttribute('src', picture)
             photograph_img.className="photographerMedia"
             photograph_article.appendChild(photograph_img)
-            photograph_img.addEventListener('click', ()=> lightbox(id, name, image, title, video))
+            photograph_img.addEventListener('click', ()=> lightbox(id, name, image, title, video, data, medias))
         }
         else if(video){
             const photograph_video = document.createElement('video')
-           
-
             photograph_video.setAttribute('src', movie)
             photograph_video.className="photographerMedia"
         
             photograph_article.appendChild(photograph_video)
-            photograph_video.addEventListener('click', ()=> lightbox(id, name, image, title, video))
+
+            photograph_video.addEventListener('click', ()=> lightbox(id, name, image, title, video, data, medias))
         }
         else return
+        
+        
 
+        // photograph_article.addEventListener('click', ()=> lightbox(id, name, image, title, video, data))
+        // console.log(data);
+        
         // ici je met en place l'écouteur d'évenement qui va me gerer les likes.
         photograph_heartIcon.addEventListener('click', (e)=> {
             // ici je crée une variable dans lequel je vais la mettre directement a +1 et a laquel je vais additionné le nombre de like déjà present
@@ -111,8 +119,6 @@ function infoMedia(data, name){
             photograph_nbLike.textContent = likes
             let allLike = document.querySelector('.asideCard_likes')
 
-            
-            console.log(e.target.classList.contains('activ'));
             // ici je met en place une condition qui verifie si l'element html contient une class specifique
             if (e.target.classList.contains('activ')) {
                 photograph_heartIcon.setAttribute('class', 'fa-regular fa-heart heartIcon')

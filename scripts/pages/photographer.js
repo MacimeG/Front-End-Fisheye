@@ -17,33 +17,30 @@ function displayHeaderPhotographe(photographer){
 }
 
 function displayMainPhotographe(photographers, name){
-   
     const recupUrl = window.location.search;
     const leIdUrl = recupUrl.slice(4)
     const photograph_media = document.querySelector(".photograph_media")
     // ici je filtre le tableau des media pour pouvoir récupéré les bons media qui correspond au photographes.
-    const photographeMedia = photographers.filter((element) => element.photographerId == leIdUrl)
-
+    const photographeMedias = photographers.filter((element) => element.photographerId == leIdUrl)
     // ici je recuperer l'element du dom qui vas contenir le nombre total de like
     let allLike = document.querySelector('.asideCard_likes')
     // grace a reduce je peux additionné les likes entre eux.
     let sumLike = photographers.map(elt => elt.likes).reduce((prev,curr) => prev + curr,0)
     allLike.textContent = sumLike;
     // ici je fais donc une boucle forEach pour pouvoir m'afficher tous les medias corresponds. ainsi que leurs informations
-    photographeMedia.forEach(element => {  
+    photographeMedias.forEach(element => {  
         // ici je fais un find() sur le tableau des photographes pour pouvoir recupéré le bon prenom 
         const photographeName = name.find((elt)=> elt.id == element.photographerId);
-      
+       
         // ici je coupe le nom du photo (l'espace entre nom et prenom) pour que ça corresponde avec le nom du dossier
         const namePhotographe = photographeName.name.split(' ')
         
-        const infoPhotographe = infoMedia(element, namePhotographe[0])
+        const infoPhotographe = infoMedia(element, namePhotographe[0], photographeMedias)
         const mediaDisplay = infoPhotographe.getPhotographerMain()
-      
+       
         photograph_media.appendChild(mediaDisplay)
     });
-    
-    // lightbox()
+    tri(photographeMedias)
 }
 
 async function init(){
