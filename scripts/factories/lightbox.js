@@ -5,7 +5,6 @@ function lightbox(id, name, image, title, video, data, medias){
     
     // premierement je recupere donc mes elements html pour pouvoir commencé a appliqué ma logique
     let lightBox_html = document.querySelector('#lightBox');
-    let lightbox_container = document.querySelector('.lightBox_container');
     let lightbox_img = document.querySelector('.lightBox_media');
     let lightbox_title = document.querySelector('#mediaName');
     let lightbox_video = document.querySelector('.lightBox_video');
@@ -37,24 +36,22 @@ function lightbox(id, name, image, title, video, data, medias){
 
 
     // ici il faut que je mette en place l'écouteur d'évenement pour parcourir la lightbox au clavier.
-    // 37 = fleche gauche
-    // 39 = fleche droite
-    // 27 = echap
+    
     window.addEventListener('keydown', function(e){
-        if(e.keyCode === 37){
+        if(e.key === 'ArrowLeft'){
             previous();
         }
-        else if(e.keyCode === 39){
+        else if(e.key === 'ArrowRight'){
             next();
         }
-        else if(e.keyCode === 27){
+        else if(e.key === 'Escape'){
             closeLightbox();
         }
     })
 
     function next(){
         mediaPosition = getMediaPosition(mediaPosition + 1, medias.length)
-        console.log(mediaPosition);
+       
         let newMedia = medias[mediaPosition];
         if(newMedia.image){
             lightbox_img.src = `assets/photographers/${name}/${newMedia.image}`;

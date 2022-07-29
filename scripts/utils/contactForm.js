@@ -13,3 +13,4 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+// ici je vais faire la fonction qui va me "géré" le formulaire
