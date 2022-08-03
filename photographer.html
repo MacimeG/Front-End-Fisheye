@@ -48,16 +48,16 @@
         name="formContact"
         id="formContact">
           
-            <label for="prenom">Prénom</label>
+            <label for="prenomForm">Prénom</label>
             <input id="prenomForm" type="text" name="prenom" />
-            <label for="nom">Nom</label>
+            <label for="nomForm">Nom</label>
             <input id="nomForm" type="text" name="nom" >
-            <label for="mail">mail</label>
+            <label for="mailForm">mail</label>
             <input id="mailForm" type="mail" name="mail" >
-            <label for="area">Votre message</label>
+            <label for="textArea">Votre message</label>
             <textarea name="textarea" id="textArea" cols="100" rows="10"></textarea>
           
-          <button class="contact_button envoyer">Envoyer</button>
+          <div tabindex="0" class="envoyer" onclick="submitForm()"><span>Envoyer</span></div>
         </form>
 			</div>
 		</div>

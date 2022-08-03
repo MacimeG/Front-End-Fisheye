@@ -22,12 +22,10 @@ aside{
     justify-content: space-around;
     background-color: #D3573C;
     height: 60px;
-    /* position: sticky; */
     width: 24%;
     bottom: 0px;
     left: 73%;
     border-radius: 5px 5px 0px 0px;
-    /* top: 732px; */
     position: fixed;
 }
 .asideCard_content{
@@ -81,63 +79,6 @@ aside p {
     font-size: larger;
     height: 55px;
 }
-
-/* .selectTri{
-    font-size: large;
-    background-color: #901C1C;
-    color: white;
-    width: 165px;
-    height: 45px;
-    border-radius: 5px;
-    margin-left: 15px;
-    padding-left: 5px;
-    margin-top: 3px;
-}
-.selectTriOpen{
-    font-size: large;
-    background-color: #901C1C;
-    color: white;
-    width: 165px;
-    height: auto;
-    border-radius: 5px;
-    margin-left: 15px;
-    padding-left: 5px;
-    position: absolute;
-    left: 10.6%;
-    
-}
-.chevronTriOpen{
-    transform: rotate(180deg);
-} */
-/* .btnTri{
-    border: 0;
-    background-color: #901C1C;
-    color: white;
-    font-size: inherit;
-    margin-top: 11px;
-    padding-left: 0px;
-    cursor: pointer;
-}
-.chevronTri{
-    margin-left: 40px;
-}
-.allOption{
-    display: block;
-    height: 95px;
-    margin-top: 13px;
-}
-hr{
-    width: 90%;
-    border: 1px solid transparent;
-    background-color: white;
-    height: 0px;
-    margin-left: 0;
-    margin-right: 0;
-}
-.option{
-    display: none;
-} */
-
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -156,7 +97,17 @@ hr{
     margin-left: 4px;
 }
 .envoyer{
-    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 40px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 35px;
 }
 #textArea{
     width: 100%;
@@ -180,40 +131,21 @@ hr{
     top: 0;
     left: 0;
     height: 100%;
-    /* background-color: #4c4b4bb0; */
-    background-color: #ffffffd6;
+    background-color: #ffffff;
     z-index: 10;
-    /* overflow: scroll; */
 }
-/* .lightBoxOuverte{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background-color: #4c4b4bb0;
-    z-index: 10;
-    overflow: scroll;
-} */
-/* .lightBox_container{
+.lightBox_container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-} */
-.lightBox_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100%;
-    width: fit-content;
+    width: 90%;
     margin: auto;
 }
 .mediaName{
     color: #901C1C;
-    width: auto;
+    width: 100%;
 }
 .lightbox_next,
 .lightbox_prev{
@@ -240,7 +172,6 @@ hr{
     cursor: pointer;
 }
 .lightBox_media{
-    /* width: 55%; */
     width: 100%;
     height: 90%;
     object-fit: scale-down;
@@ -280,10 +211,11 @@ hr{
 
 
 video{
-    width: 85%;
+    width: 100%;
     /* height: 90%; */
     /* object-fit: cover; */
     cursor: pointer;
+    /* margin: auto; */
 }
 .modal {
     border-radius: 5px;
@@ -298,6 +230,7 @@ video{
     position: absolute;
     top: -88px;
     left: 20%;
+    padding-bottom: 6px;
 }
 
 .modal header {
@@ -349,7 +282,7 @@ form div {
 
 form input {
     width: 100%;
-    height: 45px;
+    height: 40px;
     border: none;
     border-radius: 5px;
 }

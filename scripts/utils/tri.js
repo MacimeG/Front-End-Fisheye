@@ -1,12 +1,9 @@
 // ici je vais mettre en place la method de tri, et je ne sais pas encore ou je vais devoir l'appeler.
 function tri(medias, name){
   let triButton = document.querySelector('#list_tri');
-  // let name = document.querySelector('.titlePhotographe').textContent
-  let photographe_media = document.querySelector('.photograph_media')
-  // let newName = name.split(' ')
+  let photographe_media = document.querySelector('.photograph_media');
   triButton.addEventListener('change',(e)=>{
-    console.log(e.target.value);
-    
+    // je vais mettre en place mes conditions, pour que sa me sorte les bons résultat.
     if(e.target.value === 'popularite'){
       medias.sort(function (a, b) {
         //tri les medias par likes
@@ -18,8 +15,6 @@ function tri(medias, name){
         }
         return 0; 
       });
-      // return medias, name
-      
     }
     if(e.target.value === 'date'){
       medias.sort(function (a, b) {
@@ -32,7 +27,6 @@ function tri(medias, name){
         }
         return 0; 
       });
-      // return medias, name
     }
     if(e.target.value === 'titre'){
       medias.sort(function (a, b) {
@@ -45,9 +39,9 @@ function tri(medias, name){
         }
         return 0; 
       });
-      // return medias, name
     }
     
+    // ici je refais la même boucle que dans photographer.js, pour pouvoir appeler la fonction qui vas m'afficher mes medias trier.
     photographe_media.innerHTML=''
     return medias.forEach(element => {  
       const infoPhotographe = infoMedia(element, name, medias)

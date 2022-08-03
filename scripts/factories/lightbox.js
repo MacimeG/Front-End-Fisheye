@@ -25,7 +25,7 @@ function lightbox(id, name, image, title, video, data, medias){
         lightbox_video.style.display="block";
         lightbox_title.textContent= title;
     }
-    else return
+    else return;
 
 
     // ici je recuperer les elements html qui corresponde au fleche pour changer d'image, et je leurs applique un ecouteur d'evenement avec les fonctions correspondante
