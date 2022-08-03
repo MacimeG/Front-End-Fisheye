@@ -47,10 +47,10 @@ function lightbox(id, name, image, title, video, data, medias){
         else if(e.key === 'Escape'){
             closeLightbox();
         }
-    })
+    });
 
     function next(){
-        mediaPosition = getMediaPosition(mediaPosition + 1, medias.length)
+        mediaPosition = getMediaPosition(mediaPosition + 1, medias.length);
        
         let newMedia = medias[mediaPosition];
         if(newMedia.image){

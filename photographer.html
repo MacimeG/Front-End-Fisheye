@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/photographer.css" rel="stylesheet" type="text/css" />
@@ -10,11 +10,15 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
+    <!-- header -->
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" alt="Logo Fisheye" class="logo" />
     </header>
+    <!-- main -->
     <main id="main">
+      <!-- section header, qui contient l'entete et les premieres informations du photographes -->
       <section class="photograph-header"></section>
+      <!-- section filtre, qui contient le systeme de tri -->
      <section class="photograph_filtre">
       <p class="tri">Trier par </p>
       <label>
@@ -25,24 +29,27 @@
         </select>
       </label>
       </section>
+      <!-- section media, qui contient donc tous les medias du photographes -->
       <section class="photograph_media"></section>
+      <!-- ici j'ai mis en place la lightbox, elle ne contient rien et n'est pas afficher a l'écran (voir factories lightbox) -->
       <div id="lightBox">
         <i class="lightbox_prev fa-solid fa-chevron-left fa-2xl"></i>
        <i class="lightbox_next fa-solid fa-chevron-right fa-2xl"></i>
        <i class="lightbox_close fa-solid fa-xmark fa-2xl" onclick="closeLightbox()"></i>
        <div class="lightBox_container">
-        <img class="lightBox_media"></img>
-        <video class="lightBox_video"></video>
+        <img class="lightBox_media" src="https://via.placeholder.com/468x60?text=Notre+image+par+default" alt="notre image par default">
+        <video  class="lightBox_video" autoplay></video>
         <span id="mediaName" class="mediaName"></span>
        </div>
       </div>
     </main>
+    <!-- ma modal qui contient le formulaire, qui vas s'ouvrir grace a js (voir utils, contactForm.js) -->
     <div id="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
           <span class="namePhotographe"></span>
-          <img class="btnCloseModal" src="assets/icons/close.svg" onclick="closeModal()" />
+          <img class="btnCloseModal" src="assets/icons/close.svg" alt="bouton fermeture modal" onclick="closeModal()" />
         </header>
 				<form action="photographer.html"
         name="formContact"
@@ -53,7 +60,7 @@
             <label for="nomForm">Nom</label>
             <input id="nomForm" type="text" name="nom" >
             <label for="mailForm">mail</label>
-            <input id="mailForm" type="mail" name="mail" >
+            <input id="mailForm" type="email" name="mail" >
             <label for="textArea">Votre message</label>
             <textarea name="textarea" id="textArea" cols="100" rows="10"></textarea>
           

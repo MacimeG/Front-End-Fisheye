@@ -1,5 +1,6 @@
 function displayModal(name) {
     const modal = document.getElementById("contact_modal");
+    let buttonsubmit = document.querySelector('.envoyer')
     let nameModal = document.querySelector('.namePhotographe');
     nameModal.textContent = name;
     modal.style.display = "block";
@@ -11,13 +12,13 @@ function displayModal(name) {
         if(e.key === "Escape"){
             closeModal();
         }
-    })
+    });
     // ici je rajoute l'écouteur d'évenement pour validé le formulaire de la modal.
-    window.addEventListener('keydown', (e)=>{
+    buttonsubmit.addEventListener('keydown', (e)=>{
         if(e.key === "Enter"){
            submitForm();
         }
-    })
+    });
 }
 
 function closeModal() {

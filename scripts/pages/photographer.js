@@ -19,10 +19,10 @@ function displayHeaderPhotographe(photographer){
 // ici je vais devoir sortir le triage des photographes de la fonction displayMainPhotographe, pour quel soit apar pour pouvoir mieux gerer le systeme de tri. Et puis pour que ce soit plus propre car cet fonction melange un peu tout.
 
 
-function mainPhotographe(photographers, name){
+function mainPhotographe(medias, photographers){
     const recupUrl = window.location.search;
     const leIdUrl = recupUrl.slice(4);
-    const photographeMedias = photographers.filter((element) => element.photographerId == leIdUrl);
+    const photographeMedias = medias.filter((element) => element.photographerId == leIdUrl);
     const photograph_media = document.querySelector(".photograph_media");
     // ici je fais sa pour avoir les photos en populaire par defaut
     photographeMedias.sort(function (a, b) {
@@ -36,7 +36,7 @@ function mainPhotographe(photographers, name){
         return 0; 
     });
     // ici je vais recuperer le nom du photographe pour pouvoir afficher ensuite les bons medias avec
-    const photographeName = name.find((elt)=> elt.id == leIdUrl);
+    const photographeName = photographers.find((elt)=> elt.id == leIdUrl);
     const namePhotographe = photographeName.name.split(' ');
     tri(photographeMedias, namePhotographe[0]);
     
