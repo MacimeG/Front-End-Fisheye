@@ -2,6 +2,13 @@
 function tri(medias, name){
   let triButton = document.querySelector('#list_tri');
   let photographe_media = document.querySelector('.photograph_media');
+  let arrowDown = document.querySelector('.arrowDown')
+  let arrowUp = document.querySelector('.arrowUp')
+  triButton.addEventListener('click', ()=>{
+    arrowUp.classList.toggle('arrowUpp')
+    arrowDown.classList.toggle('arrowDownn')
+  })
+
   triButton.addEventListener('change',(e)=>{
     // je vais mettre en place mes conditions, pour que sa me sorte les bons résultat.
     if(e.target.value === 'popularite'){
@@ -15,6 +22,7 @@ function tri(medias, name){
         }
         return 0; 
       });
+      // arrowDown.setAttribute('class', 'arrowUp fa-solid fa-angle-down')
     }
     if(e.target.value === 'date'){
       medias.sort(function (a, b) {

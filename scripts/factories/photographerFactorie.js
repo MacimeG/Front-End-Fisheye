@@ -36,7 +36,7 @@ function infoPhotographe(data){
         photograph_header_tagline.className='photograph_tagline';
         photograph_header_button.className='contact_button';
         photograph_header_picture.className='photographer_photo';
-
+        photograph_header_p.className="countryPhotographer"
 
         photograph_header_title.textContent= name;
         photograph_header_p.textContent= city+","+country;
